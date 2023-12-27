@@ -4,7 +4,7 @@ using osuTK.Graphics;
 
 namespace GentrysQuest.Game.Graphics.TextStyles
 {
-    public partial class TitleText : SpriteText
+    public sealed partial class TitleText : SpriteText
     {
         public TitleText(string text)
         {

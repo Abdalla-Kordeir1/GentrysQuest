@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\GentrysQuest.Resources\GentrysQuest.Resources.csproj" />
@@ -9,7 +10,6 @@
     <PackageReference Include="ppy.osu.Framework" Version="2023.1201.1" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\" />
     <Folder Include="User\" />
   </ItemGroup>
 </Project>

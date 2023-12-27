@@ -21,16 +21,17 @@ namespace GentrysQuest.Game.Screens.Intro
     {
         private Sprite logo;
         private TextFlowContainer framework;
+        // private readonly Song theme = SongCollection.get_song("Classic Gentry's Theme");
         private DrawableTrack theme;
-        private List<ITextPart> osuText = new List<ITextPart>();
-        private Screen nextScreen;
+        private readonly List<ITextPart> osuText = new List<ITextPart>();
+        private readonly Screen nextScreen;
 
         public Intro(Screen nextScreen = null) { this.nextScreen = nextScreen; }
 
         [BackgroundDependencyLoader]
-        private void load(TextureStore textures, ITrackStore tracks)
+        private void load(TextureStore textures, ITrackStore trackStore)
         {
-            theme = new DrawableTrack(tracks.Get("GentrysTheme.mp3"));
+            this.theme = new DrawableTrack(trackStore.Get("GentrysTheme.mp3"));
             InternalChildren = new Drawable[]
             {
                 new Box
@@ -61,7 +62,7 @@ namespace GentrysQuest.Game.Screens.Intro
 
         public override void OnEntering(ScreenTransitionEvent e)
         {
-            AudioManager.ChangeMusic(theme);
+            GentryAudioManager.ChangeMusic(theme, "Bandito", "Gentrys Classic Theme");
             logo.Delay(1000).Then()
                 .FadeInFromZero(1200, Easing.InOutBounce);
 

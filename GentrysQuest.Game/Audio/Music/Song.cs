@@ -1,13 +1,25 @@
-using osu.Framework.Graphics.Audio;
-
 namespace GentrysQuest.Game.Audio.Music
 {
     public class Song
     {
-        private DrawableTrack song;
-        private TimingPointsHandler timingPointsHandler;
+        private osu.Framework.Audio.AudioManager audioManager;
+        public string ArtistName { get; private set; } = "artist name";
+        public string SongName { get; private set; } = "song name";
+        public string FileName { get; private set; } = "file.mp3";
+        public TimingPointsHandler TimingPointsHandler { get; private set; }
+
+        public Song(string filename, string artistName, string songName)
+        {
+            FileName = filename;
+            ArtistName = artistName;
+            SongName = songName;
+        }
     }
 }
+
+
+
+
 
 // These are quotes my fellow co workers made on this file.
 

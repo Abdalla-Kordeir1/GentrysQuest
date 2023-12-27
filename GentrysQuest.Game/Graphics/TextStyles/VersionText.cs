@@ -3,7 +3,7 @@ using osu.Framework.Graphics.Sprites;
 
 namespace GentrysQuest.Game.Graphics.TextStyles
 {
-    public partial class VersionText : SpriteText
+    public sealed partial class VersionText : SpriteText
     {
         public VersionText(string version)
         {
